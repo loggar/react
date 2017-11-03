@@ -43,8 +43,12 @@ Thumbs.db
 
 # compiled output
 dist
+.dist
+dist-production
 tmp
 out-tsc
+build
+
 
 # test
 _test-output
