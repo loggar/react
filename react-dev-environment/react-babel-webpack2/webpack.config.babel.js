@@ -3,6 +3,10 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { HotModuleReplacementPlugin } from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
+const serverEnv = {
+	port : 13030
+}
+
 const defaultEnv = {
 	dev: true,
 	production: false,
@@ -12,7 +16,7 @@ export default (env = defaultEnv) => ({
 	entry: [
 		...env.dev ? [
 			'react-hot-loader/patch', // Needed to preserve state
-			'webpack-dev-server/client?http://localhost:8080', // webpack dev server host and port
+			'webpack-dev-server/client?http://localhost:' + serverEnv.port, // webpack dev server host and port
 		] : [],
 		path.join(__dirname, 'src/index.jsx'),
 	],
@@ -39,11 +43,11 @@ export default (env = defaultEnv) => ({
 				include: path.join(__dirname, 'src'),
 				use: [
 					{
-						loader: 'babel',
+						loader: 'babel-loader',
 						options: {
 							babelrc: false,
 							presets: [
-								['es2015', { modules: false }],
+								['env', { modules: false }],
 								'react',
 							],
 							plugins: ['react-hot-loader/babel']
@@ -53,14 +57,15 @@ export default (env = defaultEnv) => ({
 			},
 			{
 				test: /\.(css|scss|sass)$/,
-				loader: env.dev ? 'style!css!sass' : ExtractTextPlugin.extract({
-					fallbackLoader: 'style',
-					loader: 'css!sass'
+				loader: env.dev ? 'style-loader!css-loader!sass-loader' : ExtractTextPlugin.extract({
+					fallbackLoader: 'style-loader',
+					loader: 'css-loader!sass-loader'
 				})
 			},
 		]
 	},
 	devServer: {
+		port: serverEnv.port,
 		hot: env.dev
 	}
 });

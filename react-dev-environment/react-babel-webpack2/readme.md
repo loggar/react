@@ -14,7 +14,7 @@ npm install react-hot-loader@3.0.0-beta.3 --save
 ####babel
 ```
 npm install babel-core babel-loader babel-register --save-dev
-npm install babel-preset-es2015 babel-preset-react --save-dev
+npm install babel-preset-env babel-preset-react --save-dev
 ```
 * babel-loader : transpile .js file in order to provide it to the webpack.
 * babel-register : transpile webpack.config.babel.js file.
@@ -57,7 +57,7 @@ export default () => ({
             options: {
               babelrc: false,
               presets: [
-                ['es2015', { modules: false }],
+                ['env', { modules: false }],
                 'react',
               ],
             }
@@ -83,12 +83,12 @@ html-webpack-plugin : it will generate an HTML file for you that includes all yo
 ```
 {
     "presets": [
-        "es2015"
+        "env"
     ]
 }
 ```
 >You can see that we included a different configuration for our babel loader, although we are able to use the .babelrc file with webpack, we included another configuration in our webpack config shown below.
-Webpack2 brings native support for ES2015 Modules. It now understands import and export without them being transformed to CommonJS requires. In our presets, we include ['es2015', { modules: false }], which disables transformation of the ES2015 module syntax, and that's why we use different babel configurations, because webpack config uses import which isn't supported by node yet.
+Webpack2 brings native support for env Modules. It now understands import and export without them being transformed to CommonJS requires. In our presets, we include ['env', { modules: false }], which disables transformation of the env module syntax, and that's why we use different babel configurations, because webpack config uses import which isn't supported by node yet.
 
 ####package.json
 ```
