@@ -32,15 +32,6 @@ Thumbs.db
 .project
 .settings
 
-# ng2
-**/src/**/*.js
-*.js.map
-!**/src/systemjs.config.extras.js
-!**/src/systemjs.config.js
-!**/src/systemjs-angular-loader.js
-**/e2e/**/*.js
-**/e2e/**/*.js.map
-
 # compiled output
 dist
 .dist
