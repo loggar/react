@@ -28,10 +28,6 @@ jspm_packages
 ehthumbs.db
 Thumbs.db
 
-# eclipse
-.project
-.settings
-
 # compiled output
 dist
 .dist
