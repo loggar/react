@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>ReactJS example</title>
+	<script src="https://fb.me/react-0.14.3.js"></script>
+	<script src="https://fb.me/react-dom-0.14.3.js"></script>
+</head>
+
+<body>
+	<div id="divHello"></div>
+
+	<script>
+		var App = React.createClass({
+			render: function () {
+				return (React.createElement("div", null, "Hello World."));
+			}
+		});
+
+		ReactDOM.render(React.createElement(App), document.querySelector("div#divHello"));
+	</script>
+</body>
+
+</html>
