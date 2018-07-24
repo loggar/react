@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Add React in One Minute</title>
+</head>
+
+<body>
+
+	<div id="root"></div>
+
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<!-- Now you can use JSX in any <script> tag by adding type="text/babel" attribute to it -->
+
+	<script type="text/babel">
+		const name = 'Josh Perez';
+		const element = <h1>Hello, {name}</h1>;
+
+		ReactDOM.render(
+			element,
+			document.getElementById('root')
+		);
+	</script>
+
+</body>
+
+</html>
