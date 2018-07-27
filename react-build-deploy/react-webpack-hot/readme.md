@@ -1,9 +1,5 @@
 # hot-module-replacement-frontend-react
 
-## refs
-
-https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
-
 ## frontend bundling
 
 ```
