@@ -34,7 +34,7 @@ dist
 dist-production
 tmp
 out-tsc
-build
+.build
 
 # test
 _test-output/
