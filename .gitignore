@@ -48,3 +48,6 @@ _tmp/
 
 # visual studio code
 .vscode/
+
+# next.js build output
+.next/
