@@ -51,3 +51,6 @@ _tmp/
 
 # next.js build output
 .next/
+
+# caches
+.cache/
