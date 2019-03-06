@@ -3,13 +3,23 @@
 The Jasmine NPM package was originally designed just to run tests against your Node.js code, but with a couple of other packages, you can get it to run your react specs as well. This tutorial assumes you’re using babel to compile your code and enzyme to test it. We’ll also be using jsdom to provide a fake HTML DOM for the tests.
 
 ```
-npm install --save-dev babel enzyme enzyme-adapter-react-16 jasmine-enzyme jsdom
+npm install --save-dev babel @babel/register babel-preset-react-app enzyme enzyme-adapter-react-16 jasmine-enzyme jsdom jasmine
 ```
 
 ```js
 // spec/helpers/babel.js
 require('babel-core/register');
 ```
+
+Or, if using TypeScript:
+
+```ts
+require('@babel/register')({
+    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+});
+```
+
+Then we’ll want to make sure that we have enzyme loaded up, so make another file in spec/helpers, we’ll call this one enzyme.js:
 
 ```js
 // spec/helpers/enzyme.js
@@ -55,4 +65,14 @@ npm install --save-dev ignore-styles
 ```js
 // spec/helpers/exclude.js
 import 'ignore-styles';
+```
+
+Finally, we need to tell Babel what flavor of Javascript we want by adding the following to package.json:
+
+```json
+"babel": {
+  "presets": [
+    "react-app"
+  ]
+}
 ```
