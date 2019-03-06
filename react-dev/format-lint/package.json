@@ -12,7 +12,7 @@
     "create-bundle:server": "cross-env BABEL_ENV=server parcel build server/index.js -d dist/server --public-url /dist --target=node",
     "generate-imported-components": "imported-components app app/imported.js",
     "start": "node dist/server",
-    "format": "prettier-standard 'app/**/*.js' 'app/**/*.jsx' 'server/**/*.js'"
+    "format": "prettier-standard app/**/*.js app/**/*.jsx server/**/*.js"
   },
   "keywords": [],
   "dependencies": {
