@@ -1,4 +1,4 @@
-# format (prettier), lint
+# format (prettier), lint and pre-commit task with husky
 
 - example project: `react-ssr/server-side-rendering`
 
@@ -34,13 +34,32 @@ app/imported.js
 dist
 coverage
 node_modules
-
 ```
 
 
-## cli usage
+## usage
+
+cli
 
 ```
 npx prettier-standard 'app/**/*.js' 'app/**/*.jsx' 'server/**/*.js'
 ```
 
+npm task
+
+```
+npm run format
+```
+
+## pre-commit automation with husky
+
+`package.json`
+```json
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged && npm run test"
+  }
+}
+`
+
+then, commit files 
