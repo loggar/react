@@ -1,4 +1,4 @@
-# create-react-app with bootstrap (Import Bootstrap As a Dependency)
+# create-react-app with bootstrap (with react-bootstrap)
 
 ```
 npx create-react-app app-with-bootstrap
