@@ -29,12 +29,13 @@ ehthumbs.db
 Thumbs.db
 
 # compiled output
-dist
-.dist
-dist-production
-tmp
-out-tsc
-.build
+dist/
+.dist/
+dist-production/
+tmp/
+out-tsc/
+.build/
+/build/
 
 # test
 _test-output/
