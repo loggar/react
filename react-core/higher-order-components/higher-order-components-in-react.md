@@ -7,8 +7,8 @@
 A classic example of functional programming example is the multiplication:
 
 ```js
-const multiply = (x) => (y) => x * y
-multiply(5)(20)
+const multiply = x => y => x * y;
+multiply(5)(20);
 ```
 
 ## Higher order component in React
@@ -28,4 +28,3 @@ const reversedName = reverse(name)
 
 1. Takes a component as argument
 2. Return other something
-
