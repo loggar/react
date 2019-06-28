@@ -2,12 +2,6 @@
 
 - https://github.com/facebook/create-react-app
 
-```
-npx create-react-app my-app
-cd my-app
-npm start
-```
-
 ```sh
 # using npx (npm 5.2+)
 npx create-react-app my-new-app
