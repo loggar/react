@@ -2,7 +2,7 @@
 
 ```sh
 npx create-react-app app-with-bootstrap
-# npm init react-app app-with-bootstrap
+# npm init react-app app-with-bootstrap # (npm 6+)
 
 cd app-with-bootstrap
 
