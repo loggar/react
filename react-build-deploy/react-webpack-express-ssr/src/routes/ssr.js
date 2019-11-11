@@ -19,15 +19,9 @@ router.get("/", async (req, res) => {
   </html>
   `;
 
-  // trying to compile the HTML we create into a Handlebar Template.
   const hbsTemplate = hbs.compile(theHtml);
-
-  //where React Server Side rendering works. If you console log the “reactComp” you will see a bunch of HTML generated.
   const reactComp = renderToString(<App />);
-
-  // will be replacing the rendered React DOM into the handlebar variable {{{reactele}}}
   const htmlToSend = hbsTemplate({ reactele: reactComp });
-
   res.send(htmlToSend);
 });
 
