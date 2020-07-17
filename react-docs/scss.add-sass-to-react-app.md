@@ -21,4 +21,3 @@ yarn add node-sass
 ```js
 import "./App.scss";
 ```
-
