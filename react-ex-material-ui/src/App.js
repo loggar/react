@@ -13,6 +13,10 @@ import FluidGrids1 from "./grid-layout/FluidGrids.1";
 import FluidGrids2 from "./grid-layout/FluidGrids.2";
 import GridAutoLayout from "./grid-layout/AutoLayout";
 
+import SimpleTabs from "./tab-panel/SimpleTabs";
+import ScrollableTabsAuto from "./tab-panel/ScrollableTabsAuto";
+import DisabledTabs from "./tab-panel/DisabledTabs";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -29,6 +33,11 @@ function Copyright() {
 export default function App() {
   return (
     <Container maxWidth="xl">
+      <Container>
+        <SimpleTabs />
+        <ScrollableTabsAuto />
+        <DisabledTabs />
+      </Container>
       <Container>
         <FluidGrids1 />
         <FluidGrids2 />
