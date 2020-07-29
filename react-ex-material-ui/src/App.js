@@ -9,6 +9,10 @@ import SimpleList from "./list/SimpleList";
 import CheckboxList from "./list/CheckboxList1";
 import CheckboxListSecondary from "./list/CheckboxList2";
 
+import FluidGrids1 from "./grid-layout/FluidGrids.1";
+import FluidGrids2 from "./grid-layout/FluidGrids.2";
+import GridAutoLayout from "./grid-layout/AutoLayout";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -25,7 +29,12 @@ function Copyright() {
 export default function App() {
   return (
     <Container maxWidth="xl">
-      <Container maxWidth="xl">
+      <Container>
+        <FluidGrids1 />
+        <FluidGrids2 />
+        <GridAutoLayout />
+      </Container>
+      <Container>
         <Typography variant="h4" component="h1" gutterBottom>
           List
         </Typography>
@@ -48,10 +57,10 @@ export default function App() {
           <CheckboxListSecondary />
         </Box>
       </Container>
-      <Container maxWidth="xl">
+      <Container>
         <Box width="sm" textAlign="center">
           <Typography variant="h4" component="h1" gutterBottom>
-            Create React App v4-beta example
+            Typography h4
           </Typography>
           <ProTip />
           <Copyright />
