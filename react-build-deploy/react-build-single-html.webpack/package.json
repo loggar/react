@@ -4,11 +4,9 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && webpack --config webpack.config.js && node ./bundle.inject.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:bundle": "webpack --config webpack.config.js",
-    "build:react-bundle": "npm run build && npm run build:bundle"
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "glob": "^7.1.6",
@@ -20,6 +18,7 @@
     "html-webpack-plugin": "^4.3.0",
     "http-proxy-middleware": "^0.20.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "replace-in-file": "^6.1.0"
   }
 }
