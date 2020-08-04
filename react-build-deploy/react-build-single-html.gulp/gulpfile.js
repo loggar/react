@@ -1,3 +1,4 @@
+// npm install gulp gulp-inline-source gulp-replace --save-dev
 const gulp = require("gulp");
 const inlinesource = require("gulp-inline-source");
 const replace = require("gulp-replace");

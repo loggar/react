@@ -41,12 +41,22 @@ gulp.task("default", () => {
 create an optimized production build and bundle all the JS and CSS files:
 
 ```
-npm run build 
+npm run build
 npx gulp
 
 # or
 
-npx react-scripts build 
+npx react-scripts build
 npx gulp
 
+```
+
+```
+npm run build && npm run gulp
+```
+
+Powershell:
+
+```
+npm run build; npm run gulp
 ```
