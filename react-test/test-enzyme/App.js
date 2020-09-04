@@ -1,0 +1,66 @@
+import React, { useState } from "react";
+import { getMetalGenres } from "./services/music-genres";
+import "./App.css";
+
+function App() {
+  const [genreList, setGenreList] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleFetchMetal = async () => {
+    try {
+      setGenreList(null);
+      setIsLoading(true);
+      const genres = await getMetalGenres();
+      setGenreList(genres);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1> Metal Music Genres </h1>
+      <div className="btn-container">
+        <button onClick={handleFetchMetal}> Fetch Some Metal Music !!!!</button>
+      </div>
+      {error ? <span> Error: {error}</span> : null}
+      {isLoading ? <span> Loading ... </span> : null}
+      {genreList ? <GenreList genres={genreList} /> : null}
+    </div>
+  );
+}
+
+function GenreList(props) {
+  return (
+    <ul className="genre-list">
+      {props.genres.map((genre) => (
+        <li key={genre}> {genre} </li>
+      ))}
+    </ul>
+  );
+}
+
+const getMetalGenres = async () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([
+        "Thrash metal",
+        "Glam metal",
+        "Gothic metal",
+        "Grindcore",
+        "Power metal",
+        "Blackened death metal",
+        "Death metal",
+        "Doom metal",
+        "Celtic metal",
+        "Folk metal",
+        "Nu metal",
+      ]);
+    }, 1000);
+  });
+};
+
+export default App;
