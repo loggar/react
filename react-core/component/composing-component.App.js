@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { Header } from "./Header";
-import { Textbox } from "./Textbox";
+import { Header } from "./composing-component.Header";
+import { Textbox } from "./composing-component.Textbox";
 import {
   DisplayToday,
   DisplayTomorrow,
   DisplayDayAfterTomorrow,
-} from "./Display";
+} from "./composing-component.Display";
 
 class App extends React.Component {
   constructor(props) {
