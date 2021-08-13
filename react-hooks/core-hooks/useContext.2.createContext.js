@@ -10,8 +10,8 @@ function App() {
   const [user] = React.useState({ name: "Fred" });
 
   return (
-    {/* we wrap the parent component with the provider property */}
-    {/* we pass data down the computer tree with value prop */}
+    /* we wrap the parent component with the provider property */
+    /* we pass data down the computer tree with value prop */
     <UserContext.Provider value={user}>
       <Main />
     </UserContext.Provider>
@@ -28,8 +28,8 @@ const Main = () => (
 // we can remove the two 'user' props, we can just use consumer
 // to consume the data where we need it
 const Header = () => (
-  {/* we use this pattern called render props to get access to the data*/}
+  /* we use this pattern called render props to get access to the data*/
   <UserContext.Consumer>
-    {user => <header>Welcome, {user.name}!</header>}
+    {(user) => <header>Welcome, {user.name}!</header>}
   </UserContext.Consumer>
 );
