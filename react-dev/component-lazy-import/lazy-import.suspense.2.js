@@ -1,4 +1,4 @@
-const OtherComponent = React.lazy(() => import("./OtherComponent"));
+const HeavyComponent = React.lazy(() => import("./HeavyComponent"));
 const AnotherComponent = React.lazy(() => import("./AnotherComponent"));
 
 function MyComponent() {
@@ -6,7 +6,7 @@ function MyComponent() {
     <div>
       <Suspense fallback={<div>Loading...</div>}>
         <section>
-          <OtherComponent />
+          <HeavyComponent />
           <AnotherComponent />
         </section>
       </Suspense>

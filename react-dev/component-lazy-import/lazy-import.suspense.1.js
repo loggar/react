@@ -1,10 +1,10 @@
-const OtherComponent = React.lazy(() => import("./OtherComponent"));
+const HeavyComponent = React.lazy(() => import("./HeavyComponent"));
 
 function MyComponent() {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <OtherComponent />
+        <HeavyComponent />
       </Suspense>
     </div>
   );
